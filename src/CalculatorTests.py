@@ -16,6 +16,12 @@ class CalcTest(unittest.TestCase):
             self.assertEqual(self.calc.add(row['Value 1'], row['Value 2']), row['Result'])
             self.assertEqual(self.calc.ans, row['Result'])
 
+    def test_subtraction(self):
+        files = CSVReader("/src/Subtraction.csv").csv_data
+        for row in files:
+            self.assertEqual(self.calc.subtract(row['Value 1'], row['Value 2']), row['Result'])
+            self.assertEqual(self.calc.ans, row['Result'])
+
     def test_results(self):
         self.assertEqual(self.calc.ans, 0)
 
