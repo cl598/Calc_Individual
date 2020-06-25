@@ -34,6 +34,12 @@ class CalcTest(unittest.TestCase):
             self.assertEqual(self.calc.divide(row['Value 1'], row['Value 2']), row['Result'])
             self.assertEqual(self.calc.ans, row['Result'])
 
+    def test_square(self):
+        files = CSVReader("/src/Square.csv").csv_data
+        for row in files:
+            self.assertEqual(self.calc.squaring(row['Value 1'], row['Value 2']), row['Result'])
+            self.assertEqual(self.calc.ans, row['Result'])
+
     def test_results(self):
         self.assertEqual(self.calc.ans, 0)
 
