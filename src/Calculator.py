@@ -4,6 +4,9 @@ def addition(a, b):
 def subtraction(a, b):
     return a - b
 
+def multiplication(a, b):
+    return a * b
+
 class Calculator:
 
     ans = 0
@@ -17,4 +20,8 @@ class Calculator:
 
     def subtract(self, a, b):
         self.ans = subtraction(a, b)
+        return self.ans
+
+    def multiple(self, a, b):
+        self.ans = multiplication(a, b)
         return self.ans
