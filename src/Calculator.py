@@ -13,6 +13,9 @@ def division(a, b):
 def square(a):
     return a * a
 
+def squareroot(a):
+    return a**(1/2)
+
 class Calculator:
 
     ans = 0
@@ -36,6 +39,10 @@ class Calculator:
         self.ans = division(a, b)
         return self.ans
 
-    def squaring(self, a, b):
+    def squaring(self, a):
         self.ans = square(a)
+        return self.ans
+
+    def squarerooting(self, a):
+        self.ans = squareroot(a)
         return self.ans

@@ -37,7 +37,13 @@ class CalcTest(unittest.TestCase):
     def test_square(self):
         files = CSVReader("/src/Square.csv").csv_data
         for row in files:
-            self.assertEqual(self.calc.squaring(row['Value 1'], row['Value 2']), row['Result'])
+            self.assertEqual(self.calc.squaring(row['Value 1']), row['Result'])
+            self.assertEqual(self.calc.ans, row['Result'])
+
+    def test_squareroot(self):
+        files = CSVReader("/src/Squareroot.csv").csv_data
+        for row in files:
+            self.assertEqual(self.calc.squarerooting(row['Value 1']), row['Result'])
             self.assertEqual(self.calc.ans, row['Result'])
 
     def test_results(self):
