@@ -28,6 +28,12 @@ class CalcTest(unittest.TestCase):
             self.assertEqual(self.calc.multiple(row['Value 1'], row['Value 2']), row['Result'])
             self.assertEqual(self.calc.ans, row['Result'])
 
+    def test_division(self):
+        files = CSVReader("/src/Division.csv").csv_data
+        for row in files:
+            self.assertEqual(self.calc.divide(row['Value 1'], row['Value 2']), row['Result'])
+            self.assertEqual(self.calc.ans, row['Result'])
+
     def test_results(self):
         self.assertEqual(self.calc.ans, 0)
 
